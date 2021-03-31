@@ -48,13 +48,6 @@ public interface GramaticaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVariavel(GramaticaParser.VariavelContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Parenteses}
-	 * labeled alternative in {@link GramaticaParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParenteses(GramaticaParser.ParentesesContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code Adicao}
 	 * labeled alternative in {@link GramaticaParser#expr}.
 	 * @param ctx the parse tree

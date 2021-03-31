@@ -70,18 +70,6 @@ public interface GramaticaListener extends ParseTreeListener {
 	 */
 	void exitVariavel(GramaticaParser.VariavelContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Parenteses}
-	 * labeled alternative in {@link GramaticaParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterParenteses(GramaticaParser.ParentesesContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Parenteses}
-	 * labeled alternative in {@link GramaticaParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitParenteses(GramaticaParser.ParentesesContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code Adicao}
 	 * labeled alternative in {@link GramaticaParser#expr}.
 	 * @param ctx the parse tree

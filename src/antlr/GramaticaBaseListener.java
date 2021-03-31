@@ -78,18 +78,6 @@ public class GramaticaBaseListener implements GramaticaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParenteses(GramaticaParser.ParentesesContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParenteses(GramaticaParser.ParentesesContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAdicao(GramaticaParser.AdicaoContext ctx) { }
 	/**
 	 * {@inheritDoc}

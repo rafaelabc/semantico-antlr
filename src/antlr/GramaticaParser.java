@@ -19,7 +19,7 @@ public class GramaticaParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, TYPE=4, ID=5, WS=6, NUM=7, SOM=8, MUL=9, ENDLINE=10;
+		T__0=1, TYPE=2, ID=3, WS=4, NUM=5, SOM=6, MUL=7, ENDLINE=8;
 	public static final int
 		RULE_prog = 0, RULE_decl = 1, RULE_expr = 2;
 	private static String[] makeRuleNames() {
@@ -31,13 +31,13 @@ public class GramaticaParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'='", "'('", "')'", null, null, null, null, "'+'", "'*'", "';'"
+			null, "'='", null, null, null, null, "'+'", "'*'", "';'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, "TYPE", "ID", "WS", "NUM", "SOM", "MUL", "ENDLINE"
+			null, null, "TYPE", "ID", "WS", "NUM", "SOM", "MUL", "ENDLINE"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -154,7 +154,6 @@ public class GramaticaParser extends Parser {
 					decl();
 					}
 					break;
-				case T__1:
 				case ID:
 				case NUM:
 					{
@@ -169,7 +168,7 @@ public class GramaticaParser extends Parser {
 				setState(10); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << TYPE) | (1L << ID) | (1L << NUM))) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << TYPE) | (1L << ID) | (1L << NUM))) != 0) );
 			setState(12);
 			match(EOF);
 			}
@@ -316,25 +315,6 @@ public class GramaticaParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class ParentesesContext extends ExprContext {
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public ParentesesContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof GramaticaListener ) ((GramaticaListener)listener).enterParenteses(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof GramaticaListener ) ((GramaticaListener)listener).exitParenteses(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof GramaticaVisitor ) return ((GramaticaVisitor<? extends T>)visitor).visitParenteses(this);
-			else return visitor.visitChildren(this);
-		}
-	}
 	public static class AdicaoContext extends ExprContext {
 		public List<ExprContext> expr() {
 			return getRuleContexts(ExprContext.class);
@@ -375,29 +355,16 @@ public class GramaticaParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(27);
+			setState(23);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__1:
-				{
-				_localctx = new ParentesesContext(_localctx);
-				_ctx = _localctx;
-				_prevctx = _localctx;
-
-				setState(21);
-				match(T__1);
-				setState(22);
-				expr(0);
-				setState(23);
-				match(T__2);
-				}
-				break;
 			case NUM:
 				{
 				_localctx = new NumeroContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(25);
+
+				setState(21);
 				match(NUM);
 				}
 				break;
@@ -406,7 +373,7 @@ public class GramaticaParser extends Parser {
 				_localctx = new VariavelContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(26);
+				setState(22);
 				match(ID);
 				}
 				break;
@@ -414,7 +381,7 @@ public class GramaticaParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(41);
+			setState(37);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -422,20 +389,20 @@ public class GramaticaParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(39);
+					setState(35);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 					case 1:
 						{
 						_localctx = new AdicaoContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(29);
-						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(30);
+						setState(25);
+						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
+						setState(26);
 						match(SOM);
-						setState(31);
+						setState(27);
 						expr(0);
-						setState(32);
+						setState(28);
 						match(ENDLINE);
 						}
 						break;
@@ -443,20 +410,20 @@ public class GramaticaParser extends Parser {
 						{
 						_localctx = new MultiplicacaoContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(34);
-						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
-						setState(35);
+						setState(30);
+						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						setState(31);
 						match(MUL);
-						setState(36);
+						setState(32);
 						expr(0);
-						setState(37);
+						setState(33);
 						match(ENDLINE);
 						}
 						break;
 					}
 					} 
 				}
-				setState(43);
+				setState(39);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
@@ -483,27 +450,26 @@ public class GramaticaParser extends Parser {
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 5);
-		case 1:
 			return precpred(_ctx, 4);
+		case 1:
+			return precpred(_ctx, 3);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\f/\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\n+\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\3\2\3\2\6\2\13\n\2\r\2\16\2\f\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3"+
-		"\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4\36\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
-		"\3\4\3\4\3\4\7\4*\n\4\f\4\16\4-\13\4\3\4\2\3\6\5\2\4\6\2\2\2\61\2\n\3"+
-		"\2\2\2\4\20\3\2\2\2\6\35\3\2\2\2\b\13\5\4\3\2\t\13\5\6\4\2\n\b\3\2\2\2"+
-		"\n\t\3\2\2\2\13\f\3\2\2\2\f\n\3\2\2\2\f\r\3\2\2\2\r\16\3\2\2\2\16\17\7"+
-		"\2\2\3\17\3\3\2\2\2\20\21\7\6\2\2\21\22\7\7\2\2\22\23\7\3\2\2\23\24\7"+
-		"\t\2\2\24\25\7\f\2\2\25\5\3\2\2\2\26\27\b\4\1\2\27\30\7\4\2\2\30\31\5"+
-		"\6\4\2\31\32\7\5\2\2\32\36\3\2\2\2\33\36\7\t\2\2\34\36\7\7\2\2\35\26\3"+
-		"\2\2\2\35\33\3\2\2\2\35\34\3\2\2\2\36+\3\2\2\2\37 \f\7\2\2 !\7\n\2\2!"+
-		"\"\5\6\4\2\"#\7\f\2\2#*\3\2\2\2$%\f\6\2\2%&\7\13\2\2&\'\5\6\4\2\'(\7\f"+
-		"\2\2(*\3\2\2\2)\37\3\2\2\2)$\3\2\2\2*-\3\2\2\2+)\3\2\2\2+,\3\2\2\2,\7"+
-		"\3\2\2\2-+\3\2\2\2\7\n\f\35)+";
+		"\3\3\4\3\4\3\4\5\4\32\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\7\4"+
+		"&\n\4\f\4\16\4)\13\4\3\4\2\3\6\5\2\4\6\2\2\2,\2\n\3\2\2\2\4\20\3\2\2\2"+
+		"\6\31\3\2\2\2\b\13\5\4\3\2\t\13\5\6\4\2\n\b\3\2\2\2\n\t\3\2\2\2\13\f\3"+
+		"\2\2\2\f\n\3\2\2\2\f\r\3\2\2\2\r\16\3\2\2\2\16\17\7\2\2\3\17\3\3\2\2\2"+
+		"\20\21\7\4\2\2\21\22\7\5\2\2\22\23\7\3\2\2\23\24\7\7\2\2\24\25\7\n\2\2"+
+		"\25\5\3\2\2\2\26\27\b\4\1\2\27\32\7\7\2\2\30\32\7\5\2\2\31\26\3\2\2\2"+
+		"\31\30\3\2\2\2\32\'\3\2\2\2\33\34\f\6\2\2\34\35\7\b\2\2\35\36\5\6\4\2"+
+		"\36\37\7\n\2\2\37&\3\2\2\2 !\f\5\2\2!\"\7\t\2\2\"#\5\6\4\2#$\7\n\2\2$"+
+		"&\3\2\2\2%\33\3\2\2\2% \3\2\2\2&)\3\2\2\2\'%\3\2\2\2\'(\3\2\2\2(\7\3\2"+
+		"\2\2)\'\3\2\2\2\7\n\f\31%\'";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

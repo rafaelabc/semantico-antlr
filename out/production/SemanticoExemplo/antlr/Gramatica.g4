@@ -10,7 +10,6 @@ decl: TYPE ID'='NUM ENDLINE                 #Declaracao
     ;
 expr: expr SOM expr ENDLINE                 #Adicao
     | expr MUL expr ENDLINE                 #Multiplicacao
-    | '(' expr ')'                          #Parenteses
     | NUM                                   #Numero
     | ID                                    #Variavel
     ;
